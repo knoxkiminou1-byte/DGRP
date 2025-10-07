@@ -113,8 +113,8 @@ export default function Home() {
       <section
         id="manifesto"
         data-animate
-        className={`py-24 px-[5%] max-w-[1400px] mx-auto border-b border-border transition-all duration-800 ${
-          visibleSections.has("manifesto") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        className={`py-24 px-[5%] max-w-[1400px] mx-auto border-b border-border transition-all duration-1000 ease-out ${
+          visibleSections.has("manifesto") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         }`}
         data-testid="section-mission"
       >
@@ -144,8 +144,8 @@ export default function Home() {
       <section
         id="roster"
         data-animate
-        className={`py-24 px-[5%] max-w-[1400px] mx-auto border-b border-border transition-all duration-800 ${
-          visibleSections.has("roster") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        className={`py-24 px-[5%] max-w-[1400px] mx-auto border-b border-border transition-all duration-1000 ease-out ${
+          visibleSections.has("roster") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         }`}
         data-testid="section-roster"
       >
@@ -157,49 +157,33 @@ export default function Home() {
             <img
               src={gmwaChoirImg}
               alt="Northern California Chapter GMWA Fresno Choir"
-              className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               data-testid="img-artist-gmwa"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6 pt-12 transition-transform duration-400 translate-y-[20%] group-hover:translate-y-0">
-              <h3 className="font-serif text-[clamp(1.2rem,3vw,1.5rem)] mb-2" data-testid="text-artist-gmwa-name">GMWA Fresno Choir</h3>
-              <p className="text-muted-foreground" data-testid="text-artist-gmwa-description">Northern California Chapter</p>
-            </div>
           </div>
           <div className="relative overflow-hidden rounded-xl min-h-[400px] group" data-testid="card-artist-stephen">
             <img
               src={stephenPreeImg}
               alt="Stephen Pree"
-              className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               data-testid="img-artist-stephen"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6 pt-12 transition-transform duration-400 translate-y-[20%] group-hover:translate-y-0">
-              <h3 className="font-serif text-[clamp(1.2rem,3vw,1.5rem)] mb-2" data-testid="text-artist-stephen-name">Stephen Pree</h3>
-              <p className="text-muted-foreground" data-testid="text-artist-stephen-description">Visionary Artist</p>
-            </div>
           </div>
           <div className="relative overflow-hidden rounded-xl min-h-[400px] group" data-testid="card-artist-elois">
             <img
               src={eloisDrewImg}
               alt="Elois Drew"
-              className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               data-testid="img-artist-elois"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6 pt-12 transition-transform duration-400 translate-y-[20%] group-hover:translate-y-0">
-              <h3 className="font-serif text-[clamp(1.2rem,3vw,1.5rem)] mb-2" data-testid="text-artist-elois-name">Elois Drew</h3>
-              <p className="text-muted-foreground" data-testid="text-artist-elois-description">Powerful Voice</p>
-            </div>
           </div>
           <div className="relative overflow-hidden rounded-xl min-h-[400px] group" data-testid="card-artist-breno">
             <img
               src={brenoBrownImg}
               alt="Breno Brown"
-              className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               data-testid="img-artist-breno"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6 pt-12 transition-transform duration-400 translate-y-[20%] group-hover:translate-y-0">
-              <h3 className="font-serif text-[clamp(1.2rem,3vw,1.5rem)] mb-2" data-testid="text-artist-breno-name">Breno Brown</h3>
-              <p className="text-muted-foreground" data-testid="text-artist-breno-description">Rising Star</p>
-            </div>
           </div>
         </div>
       </section>
@@ -208,8 +192,8 @@ export default function Home() {
       <section
         id="founder"
         data-animate
-        className={`py-24 px-[5%] max-w-[1400px] mx-auto border-b border-border transition-all duration-800 ${
-          visibleSections.has("founder") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        className={`py-24 px-[5%] max-w-[1400px] mx-auto border-b border-border transition-all duration-1000 ease-out ${
+          visibleSections.has("founder") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         }`}
         data-testid="section-founder"
       >
@@ -236,8 +220,8 @@ export default function Home() {
       <section
         id="strategy"
         data-animate
-        className={`py-24 px-[5%] max-w-[1400px] mx-auto border-b border-border transition-all duration-800 ${
-          visibleSections.has("strategy") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        className={`py-24 px-[5%] max-w-[1400px] mx-auto border-b border-border transition-all duration-1000 ease-out ${
+          visibleSections.has("strategy") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         }`}
         data-testid="section-strategy"
       >
@@ -285,8 +269,8 @@ export default function Home() {
       <section
         id="contact"
         data-animate
-        className={`py-20 px-[5%] max-w-[1400px] mx-auto transition-all duration-800 ${
-          visibleSections.has("contact") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        className={`py-20 px-[5%] max-w-[1400px] mx-auto transition-all duration-1000 ease-out ${
+          visibleSections.has("contact") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         }`}
         data-testid="section-contact"
       >
@@ -299,10 +283,11 @@ export default function Home() {
           </p>
           <Button
             size="lg"
+            asChild
             className="bg-primary text-primary-foreground hover:bg-primary/90 px-10 py-6 text-base font-semibold uppercase tracking-wider rounded-full transition-all duration-300 hover:-translate-y-1"
             data-testid="button-contact"
           >
-            Request Investor Deck
+            <a href="/contact">Request Investor Deck</a>
           </Button>
         </Card>
       </section>
