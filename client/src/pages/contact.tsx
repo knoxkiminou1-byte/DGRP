@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { ArrowLeft } from "lucide-react";
+import logoImg from "@assets/Untitled design (81)_1759812471391.png";
 
 export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
@@ -14,8 +15,8 @@ export default function Contact() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="fixed top-0 left-0 w-full z-50 bg-background/70 backdrop-blur-md border-b border-border">
         <div className="flex justify-between items-center px-[5%] py-6">
-          <div className="font-serif text-2xl font-semibold text-foreground" data-testid="text-logo">
-            DGRP Baysound
+          <div className="h-12" data-testid="logo">
+            <img src={logoImg} alt="DGRP Baysound" className="h-full w-auto" />
           </div>
           <Button
             variant="ghost"

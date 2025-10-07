@@ -4,9 +4,10 @@ import { Card } from "@/components/ui/card";
 import { Music, TrendingUp, Users } from "lucide-react";
 import gmwaChoirImg from "@assets/Untitled design (77)_1759804753362.png";
 import stephenPreeImg from "@assets/Untitled design (78)_1759804753368.png";
-import visionaryImg from "@assets/RS by RKS  300 dpi_1759809332960.jpg";
+import visionaryImg from "@assets/Untitled design (82)_imgupscaler.ai_v2(Pro)_2K_1759812799220.png";
 import eloisDrewImg from "@assets/Untitled design (79)_1759804753368.png";
 import brenoBrownImg from "@assets/Untitled design (80)_1759804753369.png";
+import logoImg from "@assets/Untitled design (81)_1759812471391.png";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,8 +54,8 @@ export default function Home() {
         }`}
       >
         <div className="flex justify-between items-center px-[5%] py-6">
-          <div className="font-serif text-2xl font-semibold text-foreground" data-testid="text-logo">
-            DGRP Baysound
+          <div className="h-12" data-testid="logo">
+            <img src={logoImg} alt="DGRP Baysound" className="h-full w-auto" />
           </div>
           <nav className="hidden md:flex gap-8">
             <button
