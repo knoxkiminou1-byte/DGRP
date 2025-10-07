@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Music, TrendingUp, Users } from "lucide-react";
 import gmwaChoirImg from "@assets/Untitled design (77)_1759804753362.png";
 import stephenPreeImg from "@assets/Untitled design (78)_1759804753368.png";
+import visionaryImg from "@assets/RS by RKS  300 dpi_1759809332960.jpg";
 import eloisDrewImg from "@assets/Untitled design (79)_1759804753368.png";
 import brenoBrownImg from "@assets/Untitled design (80)_1759804753369.png";
 
@@ -215,8 +216,8 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
           <div className="w-full md:flex-1 rounded-xl overflow-hidden" data-testid="img-founder">
             <img
-              src={stephenPreeImg}
-              alt="Founder"
+              src={visionaryImg}
+              alt="The Visionary"
               className="w-full h-full object-cover"
             />
           </div>
