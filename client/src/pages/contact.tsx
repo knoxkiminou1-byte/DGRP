@@ -15,7 +15,7 @@ export default function Contact() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="fixed top-0 left-0 w-full z-50 bg-background/70 backdrop-blur-md border-b border-border">
         <div className="flex justify-between items-center px-[5%] py-6">
-          <div className="h-16" data-testid="logo">
+          <div className="h-32" data-testid="logo">
             <img src={logoImg} alt="DGRP Baysound" className="h-full w-auto" />
           </div>
           <Button

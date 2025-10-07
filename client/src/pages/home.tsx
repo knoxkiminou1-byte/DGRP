@@ -54,7 +54,7 @@ export default function Home() {
         }`}
       >
         <div className="flex justify-between items-center px-[5%] py-6">
-          <div className="h-16" data-testid="logo">
+          <div className="h-32" data-testid="logo">
             <img src={logoImg} alt="DGRP Baysound" className="h-full w-auto" />
           </div>
           <nav className="hidden md:flex gap-8">
