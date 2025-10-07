@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Music, TrendingUp, Users } from "lucide-react";
-import gmwaChoirImg from "@assets/Untitled design (77)_1759804753362.png";
+import gmwaChoirImg from "@assets/NORTHERN CALIFORNIA CHAPTER GMWA FRESNO CHOIR_1759813080197.png";
 import stephenPreeImg from "@assets/Untitled design (78)_1759804753368.png";
 import visionaryImg from "@assets/Untitled design (82)_imgupscaler.ai_v2(Pro)_2K_1759812799220.png";
 import eloisDrewImg from "@assets/Untitled design (79)_1759804753368.png";
 import brenoBrownImg from "@assets/Untitled design (80)_1759804753369.png";
-import logoImg from "@assets/Untitled design (81)_1759812471391.png";
+import logoImg from "@assets/Untitled design (84)_1759813160799.png";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,7 +54,7 @@ export default function Home() {
         }`}
       >
         <div className="flex justify-between items-center px-[5%] py-6">
-          <div className="h-12" data-testid="logo">
+          <div className="h-16" data-testid="logo">
             <img src={logoImg} alt="DGRP Baysound" className="h-full w-auto" />
           </div>
           <nav className="hidden md:flex gap-8">
