@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DGRP Baysound | Architecting the Future of Sound</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset and Base Styles */
+        :root {
+            --background-color: #0a0a0a;
+            --text-color: #f4f4f4;
+            --primary-accent: #c6a679;
+            --card-background: #1a1a1a;
+            --border-color: #2a2a2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        h3 {
+             font-size: clamp(1.2rem, 3vw, 1.5rem);
+        }
+
+        p {
+            max-width: 70ch;
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: var(--primary-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--text-color);
+        }
+
+        /* Header Styling */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+        }
+
+        .main-header.scrolled {
+            background-color: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            font-weight: 600;
+            padding-bottom: 5px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            position: relative;
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 1)), radial-gradient(circle at top, rgba(198, 166, 121, 0.1), transparent 70%);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 50px;
+            background-color: var(--border-color);
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: var(--text-color);
+            animation: scroll-anim 2s infinite;
+        }
+
+        @keyframes scroll-anim {
+            0% { transform: scaleY(0); transform-origin: top; }
+            50% { transform: scaleY(1); transform-origin: top; }
+            51% { transform: scaleY(1); transform-origin: bottom; }
+            100% { transform: scaleY(0); transform-origin: bottom; }
+        }
+
+        /* General Content Section Styling */
+        .content-section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .content-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        /* Fade-in Animation on Scroll */
+        .hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Manifesto Section */
+        #manifesto {
+            text-align: center;
+        }
+        
+        .manifesto-text {
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-item {
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .stat-item h3 {
+            color: var(--primary-accent);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Roster Section */
+        .roster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .roster-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            min-height: 400px;
+        }
+
+        .roster-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .roster-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .roster-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.9), transparent);
+            padding: 3rem 1.5rem 1.5rem;
+            color: white;
+            opacity: 1;
+            transform: translateY(20%);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        
+        .roster-item:hover .roster-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .roster-overlay h3 {
+             margin-bottom: 0.5rem;
+        }
+        
+        /* Founder Section */
+        #founder .founder-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .founder-image {
+            flex: 1 1 400px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .founder-bio {
+            flex: 1 1 500px;
+        }
+        
+        .founder-bio h2 {
+            text-align: left;
+        }
+
+        /* Strategy Section */
+        #strategy {
+            text-align: center;
+        }
+        
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .strategy-item {
+            background-color: var(--card-background);
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .strategy-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .strategy-item .icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1.5rem;
+            color: var(--primary-accent);
+        }
+        
+        .strategy-item h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            background: var(--card-background);
+            border-radius: 12px;
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        
+        #contact p {
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-accent);
+            color: var(--background-color);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #d4b99a;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer.main-footer {
+            text-align: center;
+            padding: 2rem 5%;
+            color: #888;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .founder-bio h2 {
+                text-align: center;
+            }
+            #founder .founder-content {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="logo">DGRP Baysound</div>
+        <nav>
+            <a href="#manifesto">Mission</a>
+            <a href="#roster">Roster</a>
+            <a href="#founder">The Visionary</a>
+            <a href="#contact">Invest</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section: Fullscreen intro -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Architecting the Future of Sound.</h1>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Manifesto/Mission Section -->
+    <section id="manifesto" class="content-section hidden">
+        <h2>Our Mission</h2>
+        <p class="manifesto-text">DGRP Baysound is a new-era record label dedicated to discovering, developing, and amplifying the voices that will define the next generation of music. We operate at the intersection of artistic integrity and innovative strategy to build sustainable, global careers for our artists.</p>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>$100B+</h3>
+                <p>Projected Global Music Market by 2030</p>
+            </div>
+            <div class="stat-item">
+                <h3>84%</h3>
+                <p>Industry Revenue from Streaming</p>
+            </div>
+            <div class="stat-item">
+                <h3>3.2T</h3>
+                <p>Annual Global Music Streams</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artist Roster Section -->
+    <section id="roster" class="content-section hidden">
+        <h2>Our Roster</h2>
+        <div class="roster-grid">
+            <div class="roster-item">
+                <img src="https://placehold.co/600x750/1A1A1A/F4F4F4?text=GMWA+Fresno+Choir" alt="Northern California Chapter GMWA Fresno Choir">
+                <div class="roster-overlay">
+                    <h3>GMWA Fresno Choir</h3>
+                    <p>Northern California Chapter</p>
+                </div>
+            </div>
+            <div class="roster-item">
+                <img src="https://placehold.co/600x750/1A1A1A/F4F4F4?text=Stephen+Pree" alt="Stephen Pree">
+                <div class="roster-overlay">
+                    <h3>Stephen Pree</h3>
+                    <p>Visionary Artist</p>
+                </div>
+            </div>
+            <div class="roster-item">
+                <img src="https://placehold.co/600x750/1A1A1A/F4F4F4?text=Elois+Drew" alt="Elois Drew">
+                <div class="roster-overlay">
+                    <h3>Elois Drew</h3>
+                    <p>Powerful Voice</p>
+                </div>
+            </div>
+            <div class="roster-item">
+                <img src="https://placehold.co/600x750/1A1A1A/F4F4F4?text=Breno+Brown" alt="Breno Brown">
+                <div class="roster-overlay">
+                    <h3>Breno Brown</h3>
+                    <p>Rising Star</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder/Visionary Section -->
+    <section id="founder" class="content-section hidden">
+        <div class="founder-content">
+            <div class="founder-image">
+                <img src="https://placehold.co/800x960/1A1A1A/C6A679?text=Founder" alt="Founder of DGRP Baysound">
+            </div>
+            <div class="founder-bio">
+                <h2>The Visionary</h2>
+                <p>Led by the creative vision of a Grammy-award winning producer and cultural architect known for a 'Black Liberace' approach to artistry—blending virtuosic talent with unforgettable presentation. DGRP Baysound operates at the nexus of artistic innovation and commercial strategy, building a legacy of quality and cultural impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy/Difference Section -->
+    <section id="strategy" class="content-section hidden">
+        <h2>The DGRP Difference</h2>
+        <div class="strategy-grid">
+            <div class="strategy-item">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                </svg>
+                <h3>Artist-Centric Development</h3>
+                <p>We invest in long-term growth, providing our artists with the resources and creative freedom to realize their full potential.</p>
+            </div>
+            <div class="strategy-item">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502Z" />
+                </svg>
+                <h3>Innovative Digital Marketing</h3>
+                <p>Our data-driven approach to digital marketing ensures our artists connect with a global audience in meaningful ways.</p>
+            </div>
+            <div class="strategy-item">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.826-1.106-2.253 0-3.081a2.5 2.5 0 0 1 4.006 0l.879.658M12 6V4.5" />
+                </svg>
+                <h3>High-Margin Sync Licensing</h3>
+                <p>We proactively pursue high-value synchronization opportunities in film, television, and advertising to diversify artist revenue.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Investment Section -->
+    <section id="contact" class="content-section hidden">
+        <h2>Join Us in Shaping the Future of Music.</h2>
+        <p>We are seeking strategic partners to accelerate our growth and expand our impact. For access to our comprehensive investor deck and to schedule a private consultation, please connect with us.</p>
+        <a href="mailto:invest@dgrpbaysound.com" class="cta-button">Request Investor Deck</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2025 DGRP Baysound. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Header Scroll Effect ---
+            const header = document.querySelector('.main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // --- Fade-in on Scroll Effect ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const hiddenElements = document.querySelectorAll('.hidden');
+            hiddenElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
