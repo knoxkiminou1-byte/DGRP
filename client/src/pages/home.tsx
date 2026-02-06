@@ -170,7 +170,7 @@ export default function Home() {
               <img
                 src={izaelGarciaImg}
                 alt="Izael Garcia"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 data-testid="img-artist-izael"
               />
             </div>
@@ -181,7 +181,7 @@ export default function Home() {
               <img
                 src={eloisDrewImg}
                 alt="Elois Drew"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 data-testid="img-artist-elois"
               />
             </div>
@@ -192,7 +192,7 @@ export default function Home() {
               <img
                 src={brenoBrownImg}
                 alt="Breno Brown"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 data-testid="img-artist-breno"
               />
             </div>
