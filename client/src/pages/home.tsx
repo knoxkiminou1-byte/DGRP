@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Music, TrendingUp, Users } from "lucide-react";
-import gmwaChoirImg from "@assets/NORTHERN CALIFORNIA CHAPTER GMWA FRESNO CHOIR_1759813080197.png";
-import stephenPreeImg from "@assets/Untitled design (78)_1759804753368.png";
+import gmwaChoirImg from "@assets/Sylvia_&_Nor_Cal_GMWA_Fresno_Choir_300_dpi_1770370598191.jpg";
+import izaelGarciaImg from "@assets/Izael_photo_1770370601980.jpg";
 import visionaryImg from "@assets/Untitled design (82)_imgupscaler.ai_v2(Pro)_2K_1759812799220.png";
-import eloisDrewImg from "@assets/Untitled design (79)_1759804753368.png";
-import brenoBrownImg from "@assets/Untitled design (80)_1759804753369.png";
+import eloisDrewImg from "@assets/Elois_Drew_cover_300dpi_3kx3k_1770370606295.jpg";
+import brenoBrownImg from "@assets/Breno_300_dpi_1770370593069.jpg";
 import logoImg from "@assets/Untitled design (84)_1759813160799.png";
 
 export default function Home() {
@@ -157,17 +157,17 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-xl min-h-[400px] group" data-testid="card-artist-gmwa">
             <img
               src={gmwaChoirImg}
-              alt="Northern California Chapter GMWA Fresno Choir"
+              alt="Northern California FMWA Choir, Fresno"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               data-testid="img-artist-gmwa"
             />
           </div>
-          <div className="relative overflow-hidden rounded-xl min-h-[400px] group" data-testid="card-artist-stephen">
+          <div className="relative overflow-hidden rounded-xl min-h-[400px] group" data-testid="card-artist-izael">
             <img
-              src={stephenPreeImg}
-              alt="Stephen Pree"
+              src={izaelGarciaImg}
+              alt="Izael Garcia"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              data-testid="img-artist-stephen"
+              data-testid="img-artist-izael"
             />
           </div>
           <div className="relative overflow-hidden rounded-xl min-h-[400px] group" data-testid="card-artist-elois">
