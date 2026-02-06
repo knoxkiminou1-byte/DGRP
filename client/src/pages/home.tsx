@@ -153,46 +153,46 @@ export default function Home() {
         <h2 className="font-serif font-bold text-[clamp(2rem,6vw,3.5rem)] mb-8 text-center" data-testid="text-roster-title">
           Our Roster
         </h2>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="group" data-testid="card-artist-gmwa">
-            <div className="relative overflow-hidden rounded-xl min-h-[400px]">
+            <div className="relative overflow-hidden rounded-xl aspect-[9/16]">
               <img
                 src={gmwaChoirImg}
                 alt="Sylvia & NorCal GMWA Fresno Choir"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 data-testid="img-artist-gmwa"
               />
             </div>
             <h3 className="font-serif text-xl font-semibold mt-4 text-center">Sylvia & NorCal GMWA Fresno Choir</h3>
           </div>
           <div className="group" data-testid="card-artist-izael">
-            <div className="relative overflow-hidden rounded-xl min-h-[400px]">
+            <div className="relative overflow-hidden rounded-xl aspect-[9/16]">
               <img
                 src={izaelGarciaImg}
                 alt="Izael Garcia"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 data-testid="img-artist-izael"
               />
             </div>
             <h3 className="font-serif text-xl font-semibold mt-4 text-center">Izael Garcia</h3>
           </div>
           <div className="group" data-testid="card-artist-elois">
-            <div className="relative overflow-hidden rounded-xl min-h-[400px]">
+            <div className="relative overflow-hidden rounded-xl aspect-[9/16]">
               <img
                 src={eloisDrewImg}
                 alt="Elois Drew"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 data-testid="img-artist-elois"
               />
             </div>
             <h3 className="font-serif text-xl font-semibold mt-4 text-center">Elois Drew</h3>
           </div>
           <div className="group" data-testid="card-artist-breno">
-            <div className="relative overflow-hidden rounded-xl min-h-[400px]">
+            <div className="relative overflow-hidden rounded-xl aspect-[9/16]">
               <img
                 src={brenoBrownImg}
                 alt="Breno Brown"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 data-testid="img-artist-breno"
               />
             </div>
