@@ -1,39 +1,33 @@
 # DGRP Baysound
 
 ## Overview
-A full-stack web application for DGRP Baysound - "Architecting the Future of Sound." Built with Express + Vite + React + TypeScript.
+A static website for DGRP Baysound - "Architecting the Future of Sound." Built with Vite + React + TypeScript. Deployed as a static site.
 
 ## Project Architecture
 - **Frontend**: React 18 with Vite, TailwindCSS, Radix UI components, Framer Motion
-- **Backend**: Express.js with TypeScript (tsx)
-- **Database**: PostgreSQL (Neon) with Drizzle ORM
-- **Routing**: wouter (client-side), Express (server-side API)
-- **State Management**: TanStack React Query
+- **Routing**: wouter (client-side SPA routing)
+- **Deployment**: Static site (HTML/CSS/JS output to dist/public)
 
 ## Structure
 ```
 client/          - React frontend (Vite)
   src/
-    components/  - UI components
-    pages/       - Page components
+    components/  - UI components (Radix/shadcn)
+    pages/       - Page components (home, contact, not-found)
     hooks/       - Custom React hooks
     lib/         - Utilities
-server/          - Express backend
-  index.ts       - Entry point, binds to port 5000
-  routes.ts      - API routes (/api/*)
-  storage.ts     - Data storage interface (MemStorage)
-  vite.ts        - Vite dev server integration
-shared/          - Shared types/schema (Drizzle)
-attached_assets/ - Static image assets
+attached_assets/ - Static image assets (artist photos, logo)
+server/          - Legacy server files (not used in static mode)
+shared/          - Shared types/schema
 ```
 
 ## Key Configuration
-- Dev: `npm run dev` (tsx server/index.ts) - serves both API and frontend on port 5000
-- Build: `npm run build` (vite build + esbuild server bundle)
-- Production: `npm run start` (node dist/index.js)
-- DB Push: `npm run db:push` (drizzle-kit push)
-- Server binds to `0.0.0.0:5000`
-- Vite allowedHosts: true (configured in server/vite.ts)
+- Dev: `npm run dev` (Vite dev server on 0.0.0.0:5000)
+- Build: `npm run build` (Vite build to dist/public)
+- Deployment: Static site from dist/public
+- Vite: allowedHosts: true, port 5000
 
 ## Recent Changes
-- 2026-02-06: Initial Replit setup - installed dependencies, created PostgreSQL database, pushed schema, configured workflow and deployment
+- 2026-02-06: Converted from full-stack Express app to static site
+- 2026-02-06: Added artist names under roster images (Sylvia & NorCal GMWA Fresno Choir, Izael Garcia, Elois Drew, Breno Brown)
+- 2026-02-06: Initial Replit setup

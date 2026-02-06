@@ -154,37 +154,49 @@ export default function Home() {
           Our Roster
         </h2>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
-          <div className="relative overflow-hidden rounded-xl min-h-[400px] group" data-testid="card-artist-gmwa">
-            <img
-              src={gmwaChoirImg}
-              alt="Northern California FMWA Choir, Fresno"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              data-testid="img-artist-gmwa"
-            />
+          <div className="group" data-testid="card-artist-gmwa">
+            <div className="relative overflow-hidden rounded-xl min-h-[400px]">
+              <img
+                src={gmwaChoirImg}
+                alt="Sylvia & NorCal GMWA Fresno Choir"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-testid="img-artist-gmwa"
+              />
+            </div>
+            <h3 className="font-serif text-xl font-semibold mt-4 text-center">Sylvia & NorCal GMWA Fresno Choir</h3>
           </div>
-          <div className="relative overflow-hidden rounded-xl min-h-[400px] group" data-testid="card-artist-izael">
-            <img
-              src={izaelGarciaImg}
-              alt="Izael Garcia"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              data-testid="img-artist-izael"
-            />
+          <div className="group" data-testid="card-artist-izael">
+            <div className="relative overflow-hidden rounded-xl min-h-[400px]">
+              <img
+                src={izaelGarciaImg}
+                alt="Izael Garcia"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-testid="img-artist-izael"
+              />
+            </div>
+            <h3 className="font-serif text-xl font-semibold mt-4 text-center">Izael Garcia</h3>
           </div>
-          <div className="relative overflow-hidden rounded-xl min-h-[400px] group" data-testid="card-artist-elois">
-            <img
-              src={eloisDrewImg}
-              alt="Elois Drew"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              data-testid="img-artist-elois"
-            />
+          <div className="group" data-testid="card-artist-elois">
+            <div className="relative overflow-hidden rounded-xl min-h-[400px]">
+              <img
+                src={eloisDrewImg}
+                alt="Elois Drew"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-testid="img-artist-elois"
+              />
+            </div>
+            <h3 className="font-serif text-xl font-semibold mt-4 text-center">Elois Drew</h3>
           </div>
-          <div className="relative overflow-hidden rounded-xl min-h-[400px] group" data-testid="card-artist-breno">
-            <img
-              src={brenoBrownImg}
-              alt="Breno Brown"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              data-testid="img-artist-breno"
-            />
+          <div className="group" data-testid="card-artist-breno">
+            <div className="relative overflow-hidden rounded-xl min-h-[400px]">
+              <img
+                src={brenoBrownImg}
+                alt="Breno Brown"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                data-testid="img-artist-breno"
+              />
+            </div>
+            <h3 className="font-serif text-xl font-semibold mt-4 text-center">Breno Brown</h3>
           </div>
         </div>
       </section>
